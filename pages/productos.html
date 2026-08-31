@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productos | Pastelería Mil Sabores</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/productos.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -21,11 +22,12 @@
     <p>Explora nuestro catálogo de tortas, pasteles y dulces preparados con dedicación.</p>
     <section class="filters" aria-label="Filtros del catálogo">
       <div class="field"><label for="buscar">Buscar producto</label><input id="buscar" name="buscar" type="search" placeholder="Ej.: torta de chocolate"></div>
-      <div class="field"><label for="categoria">Categoría</label><select id="categoria" name="categoria"><option value="">Todas las categorías</option></select></div>
+      <div class="field"><label for="categoria">Categoría</label><select id="categoria" name="categoria"><option value="">Todas las categorías</option><option value="Tortas Cuadradas">Tortas Cuadradas</option><option value="Tortas Circulares">Tortas Circulares</option><option value="Postres Individuales">Postres Individuales</option><option value="Productos Sin Azúcar">Productos Sin Azúcar</option><option value="Pastelería Tradicional">Pastelería Tradicional</option><option value="Productos Sin Gluten">Productos Sin Gluten</option><option value="Productos Vegana">Productos Vegana</option><option value="Tortas Especiales">Tortas Especiales</option></select></div>
     </section>
     <section aria-labelledby="catalogo-title">
       <h2 id="catalogo-title">Catálogo</h2>
-      <div class="empty-state"><p>Los productos se mostrarán aquí próximamente.</p></div>
+      <div id="catalogo-productos" class="product-grid"></div>
+      <p id="mensaje-sin-resultados" class="no-results" role="status" hidden>No se encontraron productos para la búsqueda seleccionada.</p>
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-content"><p><strong>Pastelería Mil Sabores</strong> · Todos los derechos reservados.</p><nav aria-label="Navegación del pie de página"><a href="../index.html">Inicio</a><a href="productos.html">Productos</a><a href="contacto.html">Contacto</a></nav></div></footer>
