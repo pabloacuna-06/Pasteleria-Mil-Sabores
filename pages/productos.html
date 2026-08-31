@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Pastelería Mil Sabores</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="../index.html">Pastelería Mil Sabores</a>
+      <nav aria-label="Navegación principal"><ul class="nav-list">
+        <li><a href="../index.html">Inicio</a></li><li><a class="active" aria-current="page" href="productos.html">Productos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="blogs.html">Blogs</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="registro.html">Registro</a></li><li><a href="login.html">Iniciar sesión</a></li><li><a href="carrito.html">Carrito</a></li>
+      </ul></nav>
+      <a class="admin-link" href="../admin/index.html">Panel administrativo</a>
+    </div>
+  </header>
+  <main class="container section-block">
+    <h1>Nuestros productos</h1>
+    <p>Explora nuestro catálogo de tortas, pasteles y dulces preparados con dedicación.</p>
+    <section class="filters" aria-label="Filtros del catálogo">
+      <div class="field"><label for="buscar">Buscar producto</label><input id="buscar" name="buscar" type="search" placeholder="Ej.: torta de chocolate"></div>
+      <div class="field"><label for="categoria">Categoría</label><select id="categoria" name="categoria"><option value="">Todas las categorías</option></select></div>
+    </section>
+    <section aria-labelledby="catalogo-title">
+      <h2 id="catalogo-title">Catálogo</h2>
+      <div class="empty-state"><p>Los productos se mostrarán aquí próximamente.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-content"><p><strong>Pastelería Mil Sabores</strong> · Todos los derechos reservados.</p><nav aria-label="Navegación del pie de página"><a href="../index.html">Inicio</a><a href="productos.html">Productos</a><a href="contacto.html">Contacto</a></nav></div></footer>
+</body>
+</html>
