@@ -197,6 +197,8 @@ button:focus {
 .form-panel,
 .empty-state,
 .cart-summary,
+.benefits-panel,
+.purchase-summary,
 .article {
   padding: 1.5rem;
   border: 1px solid var(--pink);
@@ -454,6 +456,31 @@ select:disabled {
   margin-left: auto;
 }
 
+.benefits-panel {
+  margin-bottom: 1.5rem;
+}
+
+.benefits-panel h2,
+.purchase-summary h2 {
+  margin-bottom: 0.5rem;
+}
+
+.promo-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.promo-controls button {
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.purchase-summary {
+  max-width: 650px;
+  margin-top: 1.5rem;
+}
+
 .empty-summary {
   margin-top: 1rem;
 }
@@ -652,5 +679,13 @@ select:disabled {
 
   .cart-summary {
     margin-left: 0;
+  }
+
+  .promo-controls {
+    flex-direction: column;
+  }
+
+  .promo-controls button {
+    width: 100%;
   }
 }

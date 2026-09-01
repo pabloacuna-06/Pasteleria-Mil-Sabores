@@ -155,8 +155,9 @@ function mostrarCarrito() {
     lista.appendChild(crearLineaCarrito(linea, indice));
   });
 
+  const resultadoBeneficios = mostrarBeneficios(carrito);
   document.querySelector("#total-unidades").textContent = `Productos: ${calcularTotalUnidades(carrito)} unidad(es)`;
-  document.querySelector("#total-carrito").textContent = `Total: ${formatearPrecio(calcularTotal(carrito))}`;
+  document.querySelector("#total-carrito").textContent = `Total final: ${formatearPrecio(resultadoBeneficios.totalFinal)}`;
 }
 
 function vaciarCarrito() {
@@ -166,9 +167,39 @@ function vaciarCarrito() {
   }
 }
 
+function finalizarCompra() {
+  const carrito = obtenerCarrito();
+  const mensaje = document.querySelector("#mensaje-finalizacion");
+  if (carrito.length === 0) {
+    mensaje.textContent = "No puedes finalizar una compra porque el carrito está vacío.";
+    mensaje.className = "form-message error-general";
+    return;
+  }
+
+  const resultado = calcularBeneficios(carrito);
+  if (!confirm(`¿Confirmas la compra simulada por ${formatearPrecio(resultado.totalFinal)}?`)) {
+    mensaje.textContent = "La finalización fue cancelada. Tu carrito no cambió.";
+    mensaje.className = "form-message";
+    return;
+  }
+
+  const resumen = document.querySelector("#resumen-pedido");
+  document.querySelector("#detalle-pedido").textContent =
+    `Pedido simulado: ${calcularTotalUnidades(carrito)} unidad(es) y ${resultado.beneficios.length} beneficio(s) aplicado(s).`;
+  document.querySelector("#total-pedido").textContent = `Total final: ${formatearPrecio(resultado.totalFinal)}`;
+  resumen.hidden = false;
+  mensaje.textContent = "La compra es simulada: no se realizó ningún pago real.";
+  mensaje.className = "form-message success-message";
+  guardarCarrito([]);
+  localStorage.removeItem(CLAVE_BENEFICIO);
+  mostrarCarrito();
+}
+
 function iniciarCarrito() {
   if (!document.querySelector("#lista-carrito")) return;
+  iniciarBeneficios();
   document.querySelector("#vaciar-carrito").addEventListener("click", vaciarCarrito);
+  document.querySelector("#finalizar-compra").addEventListener("click", finalizarCompra);
   mostrarCarrito();
 }
 
