@@ -1,11 +1,27 @@
+function crearCeldaUsuario(texto) {
+  const celda = document.createElement("td");
+  celda.textContent = texto;
+  return celda;
+}
+
 function listarUsuariosAdmin() {
   const tabla = document.querySelector("#lista-usuarios-admin");
   if (!tabla) return;
   if (!protegerAdministracion({ profundidad: 2, permiteVendedor: false })) return;
+  asegurarUsuariosDemostracion();
   tabla.replaceChildren();
-  obtenerUsuariosAdmin().forEach(function (usuario) {
+  const usuarios = obtenerUsuariosAdmin();
+  if (usuarios.length === 0) {
     const fila = document.createElement("tr");
-    [usuario.run, `${usuario.nombre} ${usuario.apellidos}`, usuario.correo, usuario.region, usuario.comuna, usuario.perfil].forEach(function (texto) { fila.appendChild(crearCelda(texto || "")); });
+    const celda = crearCeldaUsuario("No hay usuarios registrados.");
+    celda.colSpan = 7;
+    fila.appendChild(celda);
+    tabla.appendChild(fila);
+    return;
+  }
+  usuarios.forEach(function (usuario) {
+    const fila = document.createElement("tr");
+    [usuario.run, `${usuario.nombre} ${usuario.apellidos}`, usuario.correo, usuario.region, usuario.comuna, usuario.perfil].forEach(function (texto) { fila.appendChild(crearCeldaUsuario(texto || "")); });
     const acciones = document.createElement("td");
     const detalle = document.createElement("a"); detalle.href = `detalle.html?run=${encodeURIComponent(usuario.run)}`; detalle.textContent = "Ver detalle"; detalle.className = "text-link";
     const editar = document.createElement("a"); editar.href = `formulario.html?run=${encodeURIComponent(usuario.run)}`; editar.textContent = "Editar"; editar.className = "text-link";
