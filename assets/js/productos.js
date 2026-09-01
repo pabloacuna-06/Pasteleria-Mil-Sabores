@@ -120,7 +120,12 @@ function mostrarDetalleProducto(producto) {
   boton.textContent = "Agregar al carrito";
   const aviso = crearElementoTexto("p", "", "cart-notice");
   aviso.setAttribute("role", "status");
-  boton.addEventListener("click", function () { aviso.textContent = "El carrito se implementará en la próxima etapa."; });
+  boton.addEventListener("click", function () {
+    const campoMensaje = document.querySelector("#mensaje-torta");
+    const mensaje = campoMensaje ? campoMensaje.value : "";
+    agregarProductoAlCarrito(producto.codigo, mensaje);
+    aviso.textContent = `${producto.nombre} fue agregado al carrito.`;
+  });
   informacion.appendChild(boton);
   informacion.appendChild(aviso);
   detalle.appendChild(imagen);
