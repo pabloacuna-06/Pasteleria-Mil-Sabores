@@ -7,6 +7,8 @@
   --dark-brown: #5D4037;
   --white: #FFFFFF;
   --soft-pink: #FFE3E8;
+  --error: #A32626;
+  --success: #2F6B3B;
   --shadow: 0 4px 12px rgba(93, 64, 55, 0.12);
 }
 
@@ -365,6 +367,64 @@ select:focus,
 textarea:focus {
   outline: 3px solid var(--pink);
   border-color: var(--chocolate);
+}
+
+input.campo-invalido,
+select.campo-invalido,
+textarea.campo-invalido {
+  border: 2px solid var(--error);
+}
+
+input.campo-valido,
+select.campo-valido,
+textarea.campo-valido {
+  border: 2px solid var(--success);
+}
+
+select:disabled {
+  color: #746A67;
+  background-color: #EEEAE8;
+  cursor: not-allowed;
+}
+
+.field-error {
+  min-height: 1.4rem;
+  margin: 0.25rem 0 0;
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+.form-message {
+  margin: 1rem 0 0;
+  padding: 0.75rem;
+  border-radius: 0.4rem;
+}
+
+.form-message:empty {
+  display: none;
+}
+
+.error-general {
+  border-left: 4px solid var(--error);
+  color: var(--error);
+  background-color: #FFF0F0;
+}
+
+.success-message,
+.session-greeting {
+  border-left: 4px solid var(--success);
+  color: #214C2A;
+  background-color: #EDF8EF;
+}
+
+.session-greeting {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.session-greeting p {
+  margin-top: 0;
 }
 
 .form-panel {
