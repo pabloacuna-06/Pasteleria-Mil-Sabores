@@ -1,4 +1,4 @@
-const productos = [
+const productosIniciales = [
   { codigo: "TC001", nombre: "Torta Cuadrada de Chocolate", categoria: "Tortas Cuadradas", precio: 45000, descripcion: "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.", imagen: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Square_Piece_of_Chocolate_Cake_%2828157518369%29.jpg/960px-Square_Piece_of_Chocolate_Cake_%2828157518369%29.jpg" },
   { codigo: "TC002", nombre: "Torta Cuadrada de Frutas", categoria: "Tortas Cuadradas", precio: 50000, descripcion: "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.", imagen: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Fruit_cake%281%29.jpg/960px-Fruit_cake%281%29.jpg" },
   { codigo: "TT001", nombre: "Torta Circular de Vainilla", categoria: "Tortas Circulares", precio: 40000, descripcion: "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.", imagen: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vanilla_Cake.jpg" },
@@ -16,6 +16,34 @@ const productos = [
   { codigo: "TE001", nombre: "Torta Especial de Cumpleaños", categoria: "Tortas Especiales", precio: 55000, descripcion: "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.", imagen: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Birthday_cake_with_candles.jpg" },
   { codigo: "TE002", nombre: "Torta Especial de Boda", categoria: "Tortas Especiales", precio: 60000, descripcion: "Elegante y deliciosa, esta torta está diseñada para ser el centro de atención en cualquier boda.", imagen: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wedding_cake_-_Kathmandu%2C_Nepal_on_2018.jpg/960px-Wedding_cake_-_Kathmandu%2C_Nepal_on_2018.jpg" }
 ];
+
+const CLAVE_PRODUCTOS = "productosMilSabores";
+let productos = [];
+
+function obtenerProductosActuales() {
+  const datos = localStorage.getItem(CLAVE_PRODUCTOS);
+  if (!datos) {
+    const copiaInicial = productosIniciales.map(function (producto) { return Object.assign({}, producto); });
+    localStorage.setItem(CLAVE_PRODUCTOS, JSON.stringify(copiaInicial));
+    return copiaInicial;
+  }
+  try {
+    const guardados = JSON.parse(datos);
+    if (Array.isArray(guardados)) return guardados;
+  } catch (error) {
+    // Se recupera la fuente inicial si los datos locales no son válidos.
+  }
+  const copiaInicial = productosIniciales.map(function (producto) { return Object.assign({}, producto); });
+  localStorage.setItem(CLAVE_PRODUCTOS, JSON.stringify(copiaInicial));
+  return copiaInicial;
+}
+
+function actualizarProductosActuales() {
+  productos = obtenerProductosActuales();
+  return productos;
+}
+
+actualizarProductosActuales();
 
 function formatearPrecio(precio) {
   return precio.toLocaleString("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });

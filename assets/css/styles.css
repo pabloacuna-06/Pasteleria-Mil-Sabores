@@ -481,6 +481,12 @@ select:disabled {
   margin-top: 1.5rem;
 }
 
+.admin-table-wrap { overflow-x: auto; }
+.admin-table-wrap table { width: 100%; border-collapse: collapse; background: var(--white); }
+.admin-table-wrap th, .admin-table-wrap td { padding: 0.65rem; border: 1px solid var(--pink); text-align: left; vertical-align: middle; }
+.admin-thumb { width: 70px; height: 55px; object-fit: cover; border-radius: 0.3rem; }
+.link-button { margin: 0; padding: 0; border: 0; color: var(--chocolate); background: transparent; text-decoration: underline; font: inherit; cursor: pointer; }
+
 .empty-summary {
   margin-top: 1rem;
 }

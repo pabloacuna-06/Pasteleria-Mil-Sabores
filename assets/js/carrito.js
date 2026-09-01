@@ -21,11 +21,13 @@ function obtenerCarrito() {
 
   try {
     const carrito = JSON.parse(datosGuardados);
-    if (!Array.isArray(carrito) || !carrito.every(lineaCarritoValida)) {
+    if (!Array.isArray(carrito)) {
       guardarCarrito([]);
       return [];
     }
-    return carrito;
+    const carritoValido = carrito.filter(lineaCarritoValida);
+    if (carritoValido.length !== carrito.length) guardarCarrito(carritoValido);
+    return carritoValido;
   } catch (error) {
     guardarCarrito([]);
     return [];

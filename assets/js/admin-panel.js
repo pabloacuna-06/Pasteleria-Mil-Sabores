@@ -1,0 +1,2 @@
+asegurarUsuariosDemostracion();
+protegerAdministracion({ permiteVendedor: true });

@@ -79,6 +79,8 @@ function iniciarSesion(evento) {
   evento.currentTarget.reset();
   evento.currentTarget.querySelectorAll("input").forEach(limpiarEstadoCampo);
   mostrarSesion();
+  if (usuario.perfil === "Administrador") window.location.href = "../admin/index.html";
+  if (usuario.perfil === "Vendedor") window.location.href = "../admin/productos/index.html";
 }
 
 function cerrarSesion() {
@@ -89,6 +91,7 @@ function cerrarSesion() {
 }
 
 function iniciarLogin() {
+  asegurarUsuariosDemostracion();
   const formulario = document.querySelector("#formulario-login");
   if (!formulario) return;
 
@@ -98,6 +101,8 @@ function iniciarLogin() {
   formulario.addEventListener("submit", iniciarSesion);
   document.querySelector("#cerrar-sesion").addEventListener("click", cerrarSesion);
   mostrarSesion();
+  const aviso = new URLSearchParams(window.location.search).get("mensaje");
+  if (aviso) { document.querySelector("#mensaje-login").textContent = aviso; document.querySelector("#mensaje-login").className = "form-message error-general"; }
 }
 
 iniciarLogin();
