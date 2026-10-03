@@ -2,3 +2,5 @@ Material-Docente/
 trabajo-privado/
 .DS_Store
 *.zip
+node_modules/
+dist/
