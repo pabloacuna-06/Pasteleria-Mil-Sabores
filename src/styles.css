@@ -18,3 +18,9 @@ h1 {
 .site-footer {
   background-color: #ffe3e8;
 }
+
+.producto-imagen {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
