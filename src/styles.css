@@ -7,3 +7,14 @@ h1 {
   color: #8b4513;
   font-weight: 700;
 }
+
+.navbar-brand,
+.nav-link,
+.nav-link:hover,
+.nav-link:focus {
+  color: #8b4513;
+}
+
+.site-footer {
+  background-color: #ffe3e8;
+}
