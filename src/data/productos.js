@@ -16,3 +16,14 @@ export const productos = [
   { codigo: "TE001", nombre: "Torta Especial de Cumpleaños", categoria: "Tortas Especiales", precio: 55000, descripcion: "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.", imagen: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Birthday_cake_with_candles.jpg", oferta: false },
   { codigo: "TE002", nombre: "Torta Especial de Boda", categoria: "Tortas Especiales", precio: 60000, descripcion: "Elegante y deliciosa, esta torta está diseñada para ser el centro de atención en cualquier boda.", imagen: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wedding_cake_-_Kathmandu%2C_Nepal_on_2018.jpg/960px-Wedding_cake_-_Kathmandu%2C_Nepal_on_2018.jpg", oferta: false }
 ];
+
+export const categorias = [
+  'Tortas Cuadradas',
+  'Tortas Circulares',
+  'Postres Individuales',
+  'Productos Sin Azúcar',
+  'Pastelería Tradicional',
+  'Productos Sin Gluten',
+  'Productos Vegana',
+  'Tortas Especiales',
+];
