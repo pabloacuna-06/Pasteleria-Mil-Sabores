@@ -10,8 +10,8 @@ export default function Navbar() {
           <li className="nav-item"><Link className="nav-link" to="/productos">Productos</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/categorias">Categorías</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/ofertas">Ofertas</Link></li>
-          <li className="nav-item"><a className="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
-          <li className="nav-item"><a className="nav-link" href="/pages/blogs.html">Blogs</a></li>
+          <li className="nav-item"><Link className="nav-link" to="/nosotros">Nosotros</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/blogs">Blogs</Link></li>
           <li className="nav-item"><a className="nav-link" href="/pages/contacto.html">Contacto</a></li>
           <li className="nav-item"><a className="nav-link" href="/pages/registro.html">Registro</a></li>
           <li className="nav-item"><a className="nav-link" href="/pages/login.html">Iniciar sesión</a></li>

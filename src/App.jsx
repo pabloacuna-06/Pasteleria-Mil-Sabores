@@ -6,6 +6,9 @@ import Productos from './pages/Productos.jsx';
 import Categorias from './pages/Categorias.jsx';
 import Ofertas from './pages/Ofertas.jsx';
 import DetalleProducto from './pages/DetalleProducto.jsx';
+import Nosotros from './pages/Nosotros.jsx';
+import Blogs from './pages/Blogs.jsx';
+import BlogDetalle from './pages/BlogDetalle.jsx';
 
 export default function App() {
   return (
@@ -18,6 +21,9 @@ export default function App() {
           <Route path="/productos/:codigo" element={<DetalleProducto />} />
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/ofertas" element={<Ofertas />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogDetalle />} />
         </Routes>
       </main>
       <Footer />
