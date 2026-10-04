@@ -11,6 +11,7 @@ import Blogs from './pages/Blogs.jsx';
 import BlogDetalle from './pages/BlogDetalle.jsx';
 import Contacto from './pages/Contacto.jsx';
 import Registro from './pages/Registro.jsx';
+import Login from './pages/Login.jsx';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/blogs/:id" element={<BlogDetalle />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/registro" element={<Registro />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />
