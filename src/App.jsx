@@ -9,6 +9,7 @@ import DetalleProducto from './pages/DetalleProducto.jsx';
 import Nosotros from './pages/Nosotros.jsx';
 import Blogs from './pages/Blogs.jsx';
 import BlogDetalle from './pages/BlogDetalle.jsx';
+import Contacto from './pages/Contacto.jsx';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogDetalle />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
       <Footer />
