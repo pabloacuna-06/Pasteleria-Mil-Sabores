@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function ProductoCard({ producto }) {
   return (
     <article className="card h-100">
@@ -9,7 +11,9 @@ export default function ProductoCard({ producto }) {
         <p className="fw-bold">${producto.precio.toLocaleString('es-CL')}</p>
         {producto.oferta && <span className="badge text-bg-success mb-3">Oferta</span>}
         <div>
-          <button type="button" className="btn btn-primary">Ver detalle</button>
+          <Link className="btn btn-primary" to={`/productos/${producto.codigo}`}>
+            Ver detalle
+          </Link>
         </div>
       </div>
     </article>
