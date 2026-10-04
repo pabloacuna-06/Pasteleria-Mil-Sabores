@@ -8,6 +8,8 @@ export default function Navbar() {
         <ul className="nav flex-wrap">
           <li className="nav-item"><Link className="nav-link" to="/">Inicio</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/productos">Productos</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/categorias">Categorías</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/ofertas">Ofertas</Link></li>
           <li className="nav-item"><a className="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
           <li className="nav-item"><a className="nav-link" href="/pages/blogs.html">Blogs</a></li>
           <li className="nav-item"><a className="nav-link" href="/pages/contacto.html">Contacto</a></li>
