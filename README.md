@@ -1,63 +1,101 @@
 # Pastelería Mil Sabores
 
-Proyecto académico desarrollado para la asignatura **Desarrollo Fullstack II** (`DSY1104`). Corresponde a la versión final de la **Evaluación Parcial N.º 1**.
-
 ## Integrantes
 
-- Pablo Acuña Escobar
+- Pablo Acuña
 - Cristobal Cargnino
-- Tomas Recabarren
 
 ## Descripción
 
-Pastelería Mil Sabores es un sitio web de una pastelería ficticia. Permite explorar un catálogo de productos, buscar y filtrar, revisar detalles, personalizar tortas, administrar un carrito y simular registro, inicio de sesión, beneficios y administración según perfil.
+Tienda de pastelería migrada a React para la Evaluación Parcial 2 de Desarrollo Fullstack II. Permite explorar productos, administrar el catálogo y realizar compras simuladas.
 
 ## Tecnologías
 
-- HTML5
-- CSS3
+- React
+- Vite
+- React Router
+- Bootstrap
 - JavaScript
+- localStorage
+- Vitest
+- React Testing Library
 
-No utiliza frameworks, librerías, backend ni base de datos.
+## Funcionalidades
 
-## Funcionalidades principales
+- Inicio.
+- Catálogo inicial de 16 productos, actualizable desde Administración.
+- Búsqueda por nombre o código y filtro por categoría.
+- Categorías con cantidades de productos actuales.
+- Ofertas.
+- Detalle de producto.
+- Nosotros.
+- Blogs y detalle de publicaciones.
+- Contacto.
+- Registro básico.
+- Inicio de sesión simulado.
+- Carrito persistente.
+- Cambio de cantidades, eliminación de productos y vaciado del carrito.
+- Checkout simulado.
+- Retiro en tienda o despacho a domicilio.
+- Resumen de compra realizada con cliente, entrega, productos, cantidades, subtotales y total.
+- Administración CRUD de productos: crear, consultar, editar y eliminar.
+- Compra exitosa y vista simulada de error. La vista de error está disponible en `/compra-error`, pero no está conectada al checkout.
+- Diez pruebas unitarias.
 
-- Catálogo de 16 productos, búsqueda por nombre o código y filtro por categoría.
-- Detalle de producto y mensaje personalizable para tortas.
-- Carrito persistente con `localStorage`.
-- Registro, contacto e inicio de sesión simulados con validaciones.
-- Beneficios académicos y finalización de compra simulada.
-- Panel de productos y usuarios con permisos para Cliente, Vendedor y Administrador.
+## Componentes propios
 
-## Perfiles
+- **Navbar:** muestra los enlaces de navegación de la tienda y Administración.
+- **Footer:** muestra el pie de página.
+- **ProductoCard:** muestra los datos de un producto y permite ver su detalle o agregarlo al carrito.
+- **FiltroProductos:** permite buscar productos y seleccionar una categoría.
+- **CarritoItem:** muestra un producto del carrito, su cantidad y subtotal, con botones para cambiar la cantidad o eliminarlo.
+- **ResumenCompra:** muestra las unidades y el total del carrito o checkout.
+- **FormularioProducto:** permite ingresar o editar los datos de un producto.
 
-- **Cliente:** navega, compra de forma simulada y no accede a administración.
-- **Vendedor:** consulta productos administrativos y sus detalles.
-- **Administrador:** administra productos y usuarios de forma simulada.
+## Ejecución
 
-## Ejecución local
+Desde la carpeta del proyecto:
 
-1. Abra la carpeta del proyecto en Visual Studio Code.
-2. Abra `index.html`.
-3. Inicie la extensión **Live Server** con “Open with Live Server”.
+```bash
+npm install
+npm run dev
+```
 
-El uso de un servidor local permite que las rutas y los scripts se comporten de forma consistente durante las pruebas.
+Vite mostrará una dirección local, normalmente http://localhost:5173/.
 
-## Credenciales demostrativas
+## Pruebas
 
-| Perfil | Correo | Contraseña |
-| --- | --- | --- |
-| Administrador | admin@duoc.cl | admin1 |
-| Vendedor | vendedor@duoc.cl | vend1 |
+```bash
+npm test
+```
 
-Las cuentas se crean localmente para fines de demostración si aún no existen.
+- 7 archivos de pruebas.
+- 10 pruebas unitarias.
+- Vitest y React Testing Library.
+- Vitest fue utilizado siguiendo la recomendación del docente.
 
-## Persistencia académica
+## Compilación
 
-El prototipo utiliza `localStorage` del navegador para guardar el carrito, usuarios, sesión y productos administrativos. Esta persistencia es solo académica: no equivale a una base de datos ni ofrece seguridad real.
+```bash
+npm run build
+```
 
-No existe backend, base de datos, procesamiento de pagos ni pago real.
+La compilación se genera en la carpeta `dist`.
 
-## Repositorio
+## Persistencia simulada
 
-[https://github.com/pabloacuna-06/Pasteleria-Mil-Sabores](https://github.com/pabloacuna-06/Pasteleria-Mil-Sabores)
+Los productos y el carrito utilizan localStorage para guardar datos en el navegador. No existe backend ni base de datos real.
+
+## Compra simulada
+
+- No se solicitan tarjetas.
+- No existe pasarela de pago.
+- No se realiza ningún cobro real.
+
+## Limitaciones académicas
+
+- Login y registro son demostrativos.
+- Persistencia local en el navegador.
+- Sin backend.
+- Sin autenticación segura.
+- Las imágenes externas requieren internet.
