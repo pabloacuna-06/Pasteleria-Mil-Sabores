@@ -14,6 +14,10 @@ import Registro from './pages/Registro.jsx';
 import Login from './pages/Login.jsx';
 import CompraExitosa from './pages/CompraExitosa.jsx';
 import CompraError from './pages/CompraError.jsx';
+import Carrito from './pages/Carrito.jsx';
+import Checkout from './pages/Checkout.jsx';
+import AdminProductos from './pages/AdminProductos.jsx';
+import ProductoFormulario from './pages/ProductoFormulario.jsx';
 
 export default function App() {
   return (
@@ -32,6 +36,11 @@ export default function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin/productos" element={<AdminProductos />} />
+          <Route path="/admin/productos/nuevo" element={<ProductoFormulario />} />
+          <Route path="/admin/productos/editar/:codigo" element={<ProductoFormulario />} />
           <Route path="/compra-exitosa" element={<CompraExitosa />} />
           <Route path="/compra-error" element={<CompraError />} />
         </Routes>
