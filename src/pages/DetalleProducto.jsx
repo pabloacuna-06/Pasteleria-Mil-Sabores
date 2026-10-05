@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { productos } from '../data/productos.js';
+import { agregarAlCarrito } from '../services/carritoService.js';
 
 export default function DetalleProducto() {
   const { codigo } = useParams();
@@ -24,6 +25,12 @@ export default function DetalleProducto() {
           <p className="card-text">{producto.categoria}</p>
           <p className="card-text">{producto.descripcion}</p>
           <p className="fw-bold">${producto.precio.toLocaleString('es-CL')}</p>
+          <button className="btn btn-primary" type="button" onClick={() => {
+            agregarAlCarrito(producto.codigo);
+            window.alert('Producto agregado al carrito.');
+          }}>
+            Agregar al carrito
+          </button>
         </div>
       </article>
       <Link className="btn btn-primary" to="/productos">Volver a productos</Link>

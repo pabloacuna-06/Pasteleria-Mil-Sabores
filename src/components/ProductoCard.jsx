@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { agregarAlCarrito } from '../services/carritoService.js';
 
 export default function ProductoCard({ producto }) {
   return (
@@ -14,6 +15,12 @@ export default function ProductoCard({ producto }) {
           <Link className="btn btn-primary" to={`/productos/${producto.codigo}`}>
             Ver detalle
           </Link>
+          <button className="btn btn-primary" type="button" onClick={() => {
+            agregarAlCarrito(producto.codigo);
+            window.alert('Producto agregado al carrito.');
+          }}>
+            Agregar al carrito
+          </button>
         </div>
       </div>
     </article>
