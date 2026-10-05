@@ -4,7 +4,9 @@ export default function CarritoItem({ producto, cantidad, alAumentar, alDisminui
   return (
     <article className="card mb-3">
       <div className="card-body d-flex flex-wrap align-items-center gap-3">
-        <img style={{ width: 100, height: 100, objectFit: "cover" }} src={producto.imagen} alt={producto.nombre} />
+        {producto.imagen && (
+          <img style={{ width: 100, height: 100, objectFit: "cover" }} src={producto.imagen} alt={producto.nombre} />
+        )}
         <div className="flex-grow-1">
           <p className="text-muted mb-1">{producto.codigo}</p>
           <h2 className="h5">{producto.nombre}</h2>

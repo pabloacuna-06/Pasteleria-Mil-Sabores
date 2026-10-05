@@ -4,7 +4,9 @@ import { agregarAlCarrito } from '../services/carritoService.js';
 export default function ProductoCard({ producto }) {
   return (
     <article className="card h-100">
-      <img className="card-img-top producto-imagen" src={producto.imagen} alt={producto.nombre} />
+      {producto.imagen && (
+        <img className="card-img-top producto-imagen" src={producto.imagen} alt={producto.nombre} />
+      )}
       <div className="card-body">
         <p className="text-muted mb-2">{producto.codigo}</p>
         <h2 className="card-title h5">{producto.nombre}</h2>

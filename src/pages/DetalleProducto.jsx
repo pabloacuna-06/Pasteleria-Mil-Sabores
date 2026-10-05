@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { productos } from '../data/productos.js';
+import { obtenerProductos } from '../services/productosService.js';
 import { agregarAlCarrito } from '../services/carritoService.js';
 
 export default function DetalleProducto() {
+  const productos = obtenerProductos();
   const { codigo } = useParams();
   const producto = productos.find((producto) => producto.codigo === codigo);
 
@@ -18,7 +19,9 @@ export default function DetalleProducto() {
   return (
     <section>
       <article className="card mb-4">
-        <img className="card-img-top producto-imagen" src={producto.imagen} alt={producto.nombre} />
+        {producto.imagen && (
+          <img className="card-img-top producto-imagen" src={producto.imagen} alt={producto.nombre} />
+        )}
         <div className="card-body">
           <p className="text-muted mb-2">{producto.codigo}</p>
           <h1 className="card-title">{producto.nombre}</h1>

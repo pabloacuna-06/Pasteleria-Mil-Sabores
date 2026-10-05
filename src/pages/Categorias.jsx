@@ -1,6 +1,8 @@
-import { categorias, productos } from '../data/productos.js';
+import { categorias } from '../data/productos.js';
+import { obtenerProductos } from '../services/productosService.js';
 
 export default function Categorias() {
+  const productos = obtenerProductos();
   return (
     <section>
       <h1 className="mb-3">Categorías</h1>

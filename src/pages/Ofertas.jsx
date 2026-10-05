@@ -1,7 +1,8 @@
-import { productos } from '../data/productos.js';
+import { obtenerProductos } from '../services/productosService.js';
 import ProductoCard from '../components/ProductoCard.jsx';
 
 export default function Ofertas() {
+  const productos = obtenerProductos();
   const ofertas = productos.filter((producto) => producto.oferta);
 
   return (

@@ -54,7 +54,7 @@ export default function FormularioProducto({ producto, alGuardar }) {
       </div>
       <div className="mb-3">
         <label className="form-label" htmlFor="imagen-producto">URL de imagen</label>
-        <input className="form-control" id="imagen-producto" name="imagen" type="url" value={datos.imagen} onChange={cambiarDato} required />
+        <input className="form-control" id="imagen-producto" name="imagen" type="url" value={datos.imagen} onChange={cambiarDato} />
       </div>
       <div className="form-check mb-3">
         <input className="form-check-input" id="oferta-producto" name="oferta" type="checkbox" checked={datos.oferta} onChange={cambiarDato} />

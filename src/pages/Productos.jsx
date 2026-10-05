@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { productos, categorias } from '../data/productos.js';
+import { categorias } from '../data/productos.js';
+import { obtenerProductos } from '../services/productosService.js';
 import ProductoCard from '../components/ProductoCard.jsx';
 import FiltroProductos from '../components/FiltroProductos.jsx';
 
 export default function Productos() {
+  const productos = obtenerProductos();
   const [busqueda, setBusqueda] = useState('');
   const [categoria, setCategoria] = useState('');
 
